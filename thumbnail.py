@@ -12,9 +12,10 @@ IN_DIR = 'input/'
 OUT_DIR = 'output/'
 SIZE = 300,300
 
+'''
 client = MongoClient('127.0.0.1', 27017)
 db = client['adk_thumbnails']
-
+'''
 
 
 def thumbnail(_id,_url):
@@ -27,15 +28,14 @@ def thumbnail(_id,_url):
 	to_save_name = '%sthumbnail_%s.jpeg' % (OUT_DIR,_id)
 	img.save( to_save_name, "JPEG")
 
-	print '----> 1'
+'''
 	to_insert = Thumbnails(db)
-	print '----> 2'
 	to_insert.img_id = _id
 	to_insert.img_path = to_save_name
 	to_insert.img_url = _url
 	to_insert.timestamp = time.strftime("%Y/%m/%d %H:%M:%S")
 	print to_insert.to_JSON()
-
+'''
 	try:
 		os.remove(filename)
 	except OSError:
@@ -53,7 +53,7 @@ def urlFile(_id):
 # =========== ROUTES ================
 
 @app.route("/")
-def hello():
+def home():
 	return "Server is running......"
 
 @app.route("/image/<_id>/<path:_url>")
