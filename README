@@ -1,0 +1,25 @@
+Instalación
+===========
+
+Instalar los siguientes modulos para python:
+
+- pip install Flask
+
+- pip install pil
+
+
+Ejecución
+=========
+
+Para poner a correr el servidor se debe ejecutar el siguiente comando `python thumbnail.py`, en este momento ya se podrá acceder desde la web con la siguiente ruta `http://{IP}:5000/image/{ID DE LA IMAGEN}/{URL CODIFICADA DE LA IMAGEN EN LA WEB}`
+
+Variables de Configuración
+==========================
+
+Se pueden configurar las siguientes variables en el codigo:
+
+- **SIZE:** Tamaño de la imagen a generar como thumbnail
+
+- **OUT_DIR:** Directorio donde se almacenarán las imagenes procesadas
+
+- **IN_DIR:** Directorio temporal donde se descargan las imagenes de internet que se quiere procesar
